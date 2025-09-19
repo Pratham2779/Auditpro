@@ -1,0 +1,70 @@
+# =========================
+# Logs
+# =========================
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# =========================
+# Node.js dependencies
+# =========================
+node_modules/
+
+# =========================
+# Build output
+# =========================
+dist/
+dist-ssr/
+build/
+
+# =========================
+# Local environment files
+# =========================
+.env
+*.local
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+frontend/.env
+backend/.env
+.env*         # still ignore all other .env variants, but not .env.example
+
+# =========================
+# Editor directories & files
+# =========================
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# =========================
+# Backend specific
+# =========================
+coverage/
+
+# =========================
+# OS / Misc
+# =========================
+Thumbs.db
+*.bak
+*.tmp
+*.swp
+
+# =========================
+# Credentials / Keys
+# =========================
+*.pem
+*.key
+*.crt
+*.p12
+*.cer
