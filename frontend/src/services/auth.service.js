@@ -14,8 +14,6 @@ const loginUser = async (formData) => {
       data: formData,
     });
 
-    console.log("LOGIN_API RESPONSE:", response);
-
     if (!response.data.success) {
       throw new Error(response.data.message);
     }
@@ -51,8 +49,6 @@ const logoutUser = async () => {
       url: "/auth/logout",
     });
 
-    console.log("LOGOUT_API RESPONSE:", response);
-
     if (!response.data.success) {
       throw new Error(response.data.message);
     }
@@ -81,8 +77,7 @@ const getCurrentUser = async () => {
     if (!response.data.success) {
       throw new Error(response.data.message);
     }
-
-    console.log('GET_CURRENT_USER:', response.data.data);
+    
     return response.data.data;
 
   } catch (error) {

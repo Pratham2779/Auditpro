@@ -163,7 +163,7 @@ export default function AuditHistory() {
         setTotalAudits(response.total);
       } catch (err) {
         setError('Failed to fetch audit logs. Please try again later.');
-        console.error(err);
+        console.error('Failed to fetch audit logs',err);
       } finally {
         setLoading(false);
       }
@@ -175,9 +175,6 @@ export default function AuditHistory() {
     fetchAuditLogs();
     
   }, [currentPage, searchTerm, filterDate, filterStatus]);
-
-
-console.log('dd',auditLogs);
 
   // Extract unique values for filters
   const allDates = useMemo(() => {

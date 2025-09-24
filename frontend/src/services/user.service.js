@@ -19,7 +19,6 @@ const createUser = async (formData) => {
       data: formData,
     });
 
-    console.log("USER_CREATE_API RESPONSE:", response);
 
     if (response.data.success) {
       toast.success(response.data.message || "User created successfully");
@@ -55,8 +54,6 @@ const getAllUsers = async (queryParams) => {
       params:queryParams,
     });
 
-    console.log("USER_GET_ALL_API RESPONSE:", response);
-
     if (response.data.success) {
       result = response.data.data;
     } else {
@@ -89,8 +86,6 @@ const getUserById = async (userId) => {
       method: 'GET',
       url: `/user/${userId}`,
     });
-
-    console.log("USER_GET_BY_ID_API RESPONSE:", response);
 
     if (response.data.success) {
       result = response.data.data;
@@ -125,8 +120,6 @@ const updateUser = async (userId, formData) => {
       url: `/user/update/${userId}`,
       data: formData,
     });
-
-    console.log("USER_UPDATE_API RESPONSE:", response);
 
     if (response.data.success) {
       toast.success(response.data.message || "User updated successfully");
@@ -163,8 +156,6 @@ const deleteUser = async (userId) => {
       method: 'DELETE',
       url: `/user/delete/${userId}`,
     });
-
-    console.log("USER_DELETE_API RESPONSE:", response);
 
     if (response.data.success) {
 

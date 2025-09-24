@@ -11,8 +11,6 @@ const createCounter = async (formData) => {
       data: formData,
     });
 
-    console.log("COUNTER_CREATE_API RESPONSE:", response);
-
     if (response.data.success) {
 
       toast.success(response.data.message || "Counter created successfully");
@@ -47,8 +45,6 @@ const getAllCounter = async (queryParams = {}) => {
       params: queryParams,
     });
 
-    console.log("COUNTER_GET_ALL_API RESPONSE:", response);
-
     if (response.data.success) {
       result = response.data.data;
     } else {
@@ -75,8 +71,6 @@ const getCounterById = async (counterId) => {
       method: 'GET',
       url: `/counter/${counterId}`,
     });
-
-    console.log("COUNTER_GET_BY_ID_API RESPONSE:", response);
 
     if (response.data.success) {
       result = response.data.data;
@@ -106,8 +100,6 @@ const updateCounter = async (counterId, formData) => {
       data: formData,
     });
 
-    console.log("COUNTER_UPDATE_API RESPONSE:", response);
-
     if (response.data.success) {
       toast.success(response.data.message || "Counter updated successfully");
       result = response.data.data;
@@ -135,8 +127,6 @@ const deleteCounter = async (counterId) => {
       method: 'DELETE',
       url: `/counter/delete/${counterId}`,
     });
-
-    console.log("COUNTER_DELETE_API RESPONSE:", response);
 
     if (response.data.success) {
 

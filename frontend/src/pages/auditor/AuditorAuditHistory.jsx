@@ -262,7 +262,6 @@ export default function AuditorAuditHistory() {
     navigate('/auditor/auditorAuditOverview', {
       state: { auditLog: log }
     });
-    console.log("Viewing audit log:", log);
   };
 
   if (loading) {

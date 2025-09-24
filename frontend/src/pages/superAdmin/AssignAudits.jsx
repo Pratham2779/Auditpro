@@ -25,7 +25,6 @@ export default function AssignAudits() {
   const navigate=useNavigate();
 
   const { todaysAudit: audits, error } = useSelector(s => s.assignAudit);
-  console.log("hello",audits);
   const { allAuditors } = useSelector(s => s.auditor);
   const { allCounter } = useSelector(s => s.counter);
   const loading=useSelector((state)=>state.assignAudit.loading);

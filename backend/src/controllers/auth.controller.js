@@ -140,13 +140,6 @@ const resetPassword = asyncHandler(async (req, res) => {
     throw new ApiError(404, 'User not found');
   }
 
-
-  console.log("Now         :", new Date().toISOString());
-console.log("otpExpiry   :", user.otpExpiry); 
-console.log("ExpiryTime  :", new Date(user.otpExpiry).toISOString());
-console.log("Diff (ms)   :", new Date(user.otpExpiry).getTime() - Date.now());
-
-
   if (!user.otpExpiry || Date.now() > new Date(user.otpExpiry).getTime()) {
     throw new ApiError(400, 'OTP has expired');
   }
@@ -173,7 +166,6 @@ const getCurrentUser = asyncHandler(async (req, res) => {
 
   const user= await User.findById(req?.user?._id).populate('avatar');
 
-  //console.log(user);
 
   const safeUser = {
     _id: user._id,
@@ -205,8 +197,6 @@ const verifyEmailExternal=asyncHandler(async (req,res)=>{
 
   const otp = generateVerificationToken(); 
   const otpExpiry =new Date(Date.now() + ms(process.env.OTP_EXPIRY || 10 * 60 * 1000));
-
-  console.log(user);
 
   const htmlTemplate = otpTemplate({
     otp,
@@ -254,12 +244,6 @@ const resetPasswordExternal=asyncHandler(async (req,res)=>{
   if (!user) {
     throw new ApiError(404, 'User not found');
   }
-
-
-  console.log("Now         :", new Date().toISOString());
-console.log("otpExpiry   :", user.otpExpiry); 
-console.log("ExpiryTime  :", new Date(user.otpExpiry).toISOString());
-console.log("Diff (ms)   :", new Date(user.otpExpiry).getTime() - Date.now());
 
 
   if (!user.otpExpiry || Date.now() > new Date(user.otpExpiry).getTime()) {

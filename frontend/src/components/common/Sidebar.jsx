@@ -48,7 +48,6 @@ function Sidebar({ menuItems = [], role, mobileSidebarOpen, onMobileSidebarClose
   };
 
   const handleLogout = async () => {
-    console.log('entered into logout function');
     await logoutUser();
     dispatch(logout());
     navigate('/');

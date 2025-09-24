@@ -12,8 +12,6 @@ const createSalesman = async (formData) => {
       data: formData,
     });
 
-    console.log("SALESMAN_CREATE_API RESPONSE:", response);
-
     if (response.data.success) {
       toast.success(response.data.message || "Salesman created successfully");
       result = response.data.data;
@@ -46,8 +44,6 @@ const getAllSalesman = async (queryParams = {}) => {
       params: queryParams,
     });
 
-    console.log("SALESMAN_GET_ALL_API RESPONSE:", response);
-
     if (response.data.success) {
       result = response.data.data;
     } else {
@@ -78,8 +74,6 @@ const getSalesmanById = async (salesmanId) => {
       method: 'GET',
       url: `/salesman/${salesmanId}`,
     });
-
-    console.log("SALESMAN_GET_BY_ID_API RESPONSE:", response);
 
     if (response.data.success) {
       result = response.data.data;
@@ -112,8 +106,6 @@ const updateSalesman = async (salesmanId, formData) => {
       data: formData,
     });
 
-    console.log("SALESMAN_UPDATE_API RESPONSE:", response);
-
     if (response.data.success) {
       toast.success(response.data.message || "Salesman updated successfully");
       result = response.data.data;
@@ -143,8 +135,6 @@ const deleteSalesman = async (salesmanId) => {
       method: 'DELETE',
       url: `/salesman/delete/${salesmanId}`,
     });
-
-    console.log("SALESMAN_DELETE_API RESPONSE:", response);
 
     if (response.data.success) {
       toast.success(response.data.message || "Salesman deleted successfully");

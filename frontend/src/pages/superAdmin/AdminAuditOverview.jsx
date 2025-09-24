@@ -28,7 +28,6 @@ export default function AdminAuditOverview() {
 
   const state = useLocation();
   const auditLog = state.state.auditLog;
-  //console.log('hellloo',state.state.auditLog);
 
   const convertExcelDate = (excelDate) => {
     if (!excelDate) return 'N/A';
@@ -176,6 +175,7 @@ export default function AdminAuditOverview() {
       window.open(auditLog.reportFile.downloadUrl, '_blank');
     } else {
       console.log('PDF Report not available');
+      toast.error('PDF Report not avaliable');
     }
   };
 
@@ -184,6 +184,7 @@ export default function AdminAuditOverview() {
       window.open(auditLog.auditFile.downloadUrl, '_blank');
     } else {
       console.log('Audit file not available');
+      toast.error('Audit file not avaliable');
     }
   };
 
@@ -195,8 +196,8 @@ export default function AdminAuditOverview() {
     try {
       await updateAuditlog(auditLog._id,{auditStatus:'approved'});
     } catch (error) {
-      console.log("failed to update status");
-      toast.error(error);
+      console.log("failed to update status",error);
+      toast.error('failed to update status');
     }
   }
   const handleDisapprove=async ()=>{
@@ -207,8 +208,8 @@ export default function AdminAuditOverview() {
      try {
       await updateAuditlog(auditLog._id,{auditStatus:'disapproved'});
     } catch (error) {
-      console.log("failed to update status");
-      toast.error(error);
+      console.log("failed to update status",error);
+      toast.error('failed to update status');
     }
 
   }

@@ -9,7 +9,6 @@ const getAllCounter=asyncHandler(async(req,res)=>{
      if(!Allcounter){
         throw new ApiError(400,"fetching all counters failed");
      }
-     console.log('all counters:\n',Allcounter);
      return res.status(200).json(new ApiResponse(201,Allcounter,'success'));
 });
 
@@ -23,7 +22,6 @@ const getCounterById=asyncHandler(async(req,res)=>{
         throw new ApiError(400,'counter does not exist');
      }
 
-     console.log('counter:\n',counter);
      return res.status(200).json(new ApiResponse(200,counter,'counter found'));
 
 });
@@ -64,7 +62,6 @@ const createCounter = asyncHandler(async (req, res) => {
         throw new ApiError(400, 'Counter creation failed');
     }
 
-    console.log('New counter created:\n', newCounter);
     return res.status(200).json(new ApiResponse(200, newCounter, 'Counter created successfully!'));
 });
 
@@ -107,7 +104,6 @@ const updateCounter = asyncHandler(async (req, res) => {
 
     await counter.save();
 
-    console.log('Updated counter\n', counter);
     return res.status(200).json(new ApiResponse(200, counter, 'Counter updated successfully'));
 });
 
@@ -125,7 +121,6 @@ const deleteCounter=asyncHandler(async(req,res)=>{
     if(isDeleted){
         throw new ApiError(400,'Failed to delete counter');
     }
-    console.log('Deleted counter',counter);
     return res.status(200).json(new ApiResponse(200,{},'Counter deleted successfully!'));
 
 });

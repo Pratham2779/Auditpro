@@ -24,8 +24,6 @@ export default function AuditorAuditOverview() {
 
   const state=useLocation();
   const auditLog=state.state.auditLog;
-  //console.log('hellloo',state.state.auditLog);
-
   const convertExcelDate = (excelDate) => {
     if (!excelDate) return 'N/A';
     const date = new Date((excelDate - 25569) * 86400 * 1000);
@@ -172,6 +170,7 @@ export default function AuditorAuditOverview() {
       window.open(auditLog.reportFile.downloadUrl, '_blank');
     } else {
       console.log('PDF Report not available');
+      toast.error('PDF Report not available');
     }
   };
 

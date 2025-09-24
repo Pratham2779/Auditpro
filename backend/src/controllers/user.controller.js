@@ -33,7 +33,6 @@ const createUser = asyncHandler(async (req, res) => {
     }
     
     if (!allowedGender.includes(gender.trim(' '))) {
-        console.log('\n\ngender:',gender);
         throw new ApiError(400, 'Invalid gender');
     }
 
@@ -143,7 +142,6 @@ const getUserById = asyncHandler(async (req, res) => {
 
     const user = await User.findById(id).select('-password');
 
-    console.log('user:\n', user);
 
     if (!user) {
         throw new ApiError(400, 'User not found');
