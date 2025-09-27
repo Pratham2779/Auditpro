@@ -1,6 +1,4 @@
-Here’s a **professional GitHub repository description** for your AuditPro project based on your LaTeX résumé content:
 
----
 
 **Repository Name:** `AuditPro`
 **Description:** Centralized Jewellery Audit Management System with barcode scanning, automated matching, role-based dashboards, and PDF reporting. Built with React, Node.js, Express, MongoDB, and Cloudinary.
@@ -54,3 +52,4 @@ AuditPro replaces manual spreadsheet-based jewellery audits with a centralized, 
 If you want, I can **also write a concise 2–3 line “short GitHub description”** suitable for the repo main page — something eye-catching for recruiters.
 
 Do you want me to do that too?
+
