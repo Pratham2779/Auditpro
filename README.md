@@ -1,10 +1,8 @@
 
-
-**Repository Name:** `AuditPro`
-**Description:** Centralized Jewellery Audit Management System with barcode scanning, automated matching, role-based dashboards, and PDF reporting. Built with React, Node.js, Express, MongoDB, and Cloudinary.
----
 ### AuditPro - Jewellery Audit Management System
+---
 
+**Description:** Centralized Jewellery Audit Management System with barcode scanning, automated matching, role-based dashboards, and PDF reporting. Built with React, Node.js, Express, MongoDB, and Cloudinary.
 **Live Demo:** [AuditPro Live](https://auditpro.prathamesh.site/)
 **GitHub:** [Source Code](https://github.com/Pratham2779/Auditpro.git)
 
@@ -46,6 +44,7 @@ AuditPro replaces manual spreadsheet-based jewellery audits with a centralized, 
 * Admins can review matched/unmatched items and generate PDF reports.
 
 ---
+
 
 
 
