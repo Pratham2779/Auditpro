@@ -1,6 +1,9 @@
 
 ### AuditPro - Jewellery Audit Management System
 ---
+## Architecture
+
+![KodeBox Architecture Diagram](./AuditPro_architecture.png)
 
 **Description:** Centralized Jewellery Audit Management System with barcode scanning, automated matching, role-based dashboards, and PDF reporting. Built with React, Node.js, Express, MongoDB, and Cloudinary.
 **Live Demo:** [AuditPro Live](https://auditpro.prathamesh.site/)
